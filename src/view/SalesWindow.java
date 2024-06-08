@@ -41,8 +41,28 @@ public class SalesWindow extends JFrame {
 
         btnAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                String customer = txtCustomer.getText();
+                String product = txtProduct.getText();
+                int quantity;
+                try {
+                    quantity = Integer.parseInt(txtQuantity.getText());
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(SalesWindow.this, "La cantidad debe ser un número entero.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
                 // Aquí deberías añadir el código para agregar una nueva venta
-                // usando los datos ingresados en txtCustomer, txtProduct y txtQuantity
+                // Por ejemplo, si tienes una lista de ventas, podrías hacer algo como esto:
+                // salesList.add(new Sale(customer, product, quantity));
+
+                // Luego, deberías actualizar la tabla de ventas para mostrar la nueva venta
+                // Por ejemplo, si estás usando un DefaultTableModel, podrías hacer algo como esto:
+                // ((DefaultTableModel) tblSales.getModel()).addRow(new Object[] {customer, product, quantity});
+
+                // Finalmente, deberías limpiar los campos de texto para la próxima venta
+                txtCustomer.setText("");
+                txtProduct.setText("");
+                txtQuantity.setText("");
             }
         });
     }
