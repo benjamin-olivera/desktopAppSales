@@ -1,11 +1,18 @@
 package view;
 import javax.swing.*;
+
+import model.Customer;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 
 public class CustomerWindow extends JFrame {
     private JTextField txtName;
+    private JTextField txtLastName;
     private JTextField txtAddress;
+    private JTextField txtPhone;
+    private JTextField txtId;
     private JButton btnAdd;
     private JTable tblCustomers;
 
@@ -50,10 +57,36 @@ public class CustomerWindow extends JFrame {
                 txtName.setText("");
                 txtAddress.setText("");
             }
-            public void addCustomerListener(ActionListener listener) {
-                btnAdd.addActionListener(listener);
-            }
+           
+
+           
         });
        
     }
+    public void addCustomerListener(ActionListener listener) {
+        btnAdd.addActionListener(listener);
+    }
+    public String getNombres() {
+        return txtName.getText();
+    }
+
+    public String getApellidos() {
+        return txtLastName.getText();
+    }
+
+    public String getDireccion() {
+        return txtAddress.getText();
+    }
+
+    public String getTelefono() {
+        return txtPhone.getText();
+    }
+
+    public String getDni() {
+        return txtId.getText();
+    }
+	public void updateTable(List<Customer> model) {
+		// TODO Auto-generated method stub
+		
+	}
 }

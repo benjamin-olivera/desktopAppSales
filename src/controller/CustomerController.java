@@ -9,6 +9,7 @@ import java.util.List;
 
 public class CustomerController {
     private CustomerWindow view;
+   
     private List<Customer> model;
 
     public CustomerController(CustomerWindow view, List<Customer> model) {
@@ -17,9 +18,12 @@ public class CustomerController {
 
         this.view.addCustomerListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String name = view.getCustomerName();
-                String address = view.getCustomerAddress();
-                model.add(new Customer(name, address));
+                String nombres = view.getNombres();
+                String apellidos = view.getApellidos();
+                String direccion = view.getDireccion();
+                String telefono = view.getTelefono();
+                String dni = view.getDni();
+                model.add(new Customer(nombres,apellidos,direccion,telefono,dni));
                 view.updateTable(model);
             }
         });
