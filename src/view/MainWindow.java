@@ -27,13 +27,29 @@ public class MainWindow {
         JMenu mnReportes = new JMenu("Reportes");
         menuBar.add(mnReportes);
 
+        
         mntmClientes.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // código para manejar la opción "Clientes"
+                CustomerWindow customerWindow = new CustomerWindow();
+                customerWindow.setVisible(true);
             }
         });
 
-        // Añade ActionListener para las demás opciones de menú
+        mntmProductos.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ProductWindow productWindow = new ProductWindow();
+                productWindow.setVisible(true);
+            }
+        });
+
+        JMenuItem mntmVentas = new JMenuItem("Ventas");
+        mnVentas.add(mntmVentas);
+        mntmVentas.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                SalesWindow salesWindow = new SalesWindow();
+                salesWindow.setVisible(true);
+            }
+        });
 
         frame.setSize(500, 500);
         frame.setVisible(true);
