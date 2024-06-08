@@ -1,6 +1,6 @@
 package model;
 
-public class Producto {
+public class Product {
 	 private static int nextId = 2001;
 	    private int codigoProducto;
 	    private String nombre;
@@ -9,7 +9,7 @@ public class Producto {
 	    private int stockMinimo;
 	    private int stockMaximo;
 
-	    public Producto(String nombre, double precio, int stockActual, int stockMinimo, int stockMaximo) {
+	    public Product(String nombre, double precio, int stockActual, int stockMinimo, int stockMaximo) {
 	        this.codigoProducto = nextId++;
 	        this.nombre = nombre;
 	        this.precio = precio;
@@ -23,7 +23,7 @@ public class Producto {
 		}
 
 		public static void setNextId(int nextId) {
-			Producto.nextId = nextId;
+			Product.nextId = nextId;
 		}
 
 		public int getCodigoProducto() {

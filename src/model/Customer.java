@@ -1,6 +1,6 @@
 package model;
 
-public class Cliente {
+public class Customer {
 	private static int nextId = 1001;
     private int codigoCliente;
     private String nombres;
@@ -9,7 +9,7 @@ public class Cliente {
     private String telefono;
     private String dni;
 
-    public Cliente(String nombres, String apellidos, String direccion, String telefono, String dni) {
+    public Customer(String nombres, String apellidos, String direccion, String telefono, String dni) {
         this.codigoCliente = nextId++;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -23,7 +23,7 @@ public class Cliente {
 	}
 
 	public static void setNextId(int nextId) {
-		Cliente.nextId = nextId;
+		Customer.nextId = nextId;
 	}
 
 	public int getCodigoCliente() {

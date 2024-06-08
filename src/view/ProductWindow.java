@@ -36,8 +36,26 @@ public class ProductWindow extends JFrame {
 
         btnAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                String name = txtName.getText();
+                double price;
+                try {
+                    price = Double.parseDouble(txtPrice.getText());
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(ProductWindow.this, "El precio debe ser un número.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
                 // Aquí deberías añadir el código para agregar un nuevo producto
-                // usando los datos ingresados en txtName y txtPrice
+                // Por ejemplo, si tienes una lista de productos, podrías hacer algo como esto:
+                // productList.add(new Product(name, price));
+
+                // Luego, deberías actualizar la tabla de productos para mostrar el nuevo producto
+                // Por ejemplo, si estás usando un DefaultTableModel, podrías hacer algo como esto:
+                // ((DefaultTableModel) tblProducts.getModel()).addRow(new Object[] {name, price});
+
+                // Finalmente, deberías limpiar los campos de texto para el próximo producto
+                txtName.setText("");
+                txtPrice.setText("");
             }
         });
     }

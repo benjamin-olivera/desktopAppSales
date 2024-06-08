@@ -35,9 +35,25 @@ public class CustomerWindow extends JFrame {
 
         btnAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                String name = txtName.getText();
+                String address = txtAddress.getText();
+
                 // Aquí deberías añadir el código para agregar un nuevo cliente
-                // usando los datos ingresados en txtName y txtAddress
+                // Por ejemplo, si tienes una lista de clientes, podrías hacer algo como esto:
+                // customerList.add(new Customer(name, address));
+
+                // Luego, deberías actualizar la tabla de clientes para mostrar el nuevo cliente
+                // Por ejemplo, si estás usando un DefaultTableModel, podrías hacer algo como esto:
+                // ((DefaultTableModel) tblCustomers.getModel()).addRow(new Object[] {name, address});
+
+                // Finalmente, deberías limpiar los campos de texto para el próximo cliente
+                txtName.setText("");
+                txtAddress.setText("");
+            }
+            public void addCustomerListener(ActionListener listener) {
+                btnAdd.addActionListener(listener);
             }
         });
+       
     }
 }
